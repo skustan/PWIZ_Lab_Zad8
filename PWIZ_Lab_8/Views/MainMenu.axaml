@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PWIZ_Lab_8.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PWIZ_Lab_8.Views.MainMenu"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+
+	<StackPanel Background="#35654D">
+
+		<Image
+			Source="/Assets/banner.png"
+			
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			
+			Width="300"
+			Height="300"
+			/>
+		
+		<Grid
+			ColumnDefinitions="auto, auto, auto"
+			HorizontalAlignment="Center"
+			>
+			<Button
+			Grid.Column="0"
+			
+			Margin="2"
+			Width="150"
+			HorizontalContentAlignment="Center"
+			HorizontalAlignment="Center"
+				>Gra 1</Button>
+
+			<Button
+			Grid.Column="1"
+			
+			Margin="2"
+			Width="150"
+			HorizontalContentAlignment="Center"
+			HorizontalAlignment="Center"
+				>Gra 2</Button>
+
+			<Button
+			Grid.Column="2"
+			
+			Margin="2"
+			Width="150"
+			HorizontalContentAlignment="Center"
+			HorizontalAlignment="Center"
+				>Gra 3</Button>
+			
+		</Grid>
+		
+		<Button 
+			Name="ButtonScoreBoard"
+			
+			Margin="2"
+			Width="150"
+			HorizontalContentAlignment="Center"
+			HorizontalAlignment="Center"
+				>Historia gier</Button>
+
+		<Button
+			Name="ButtonExit"
+			
+			Margin="2"
+			Width="150"
+			HorizontalContentAlignment="Center"
+			HorizontalAlignment="Center"
+				>Zakończ grę</Button>
+		
+	</StackPanel>
+	
+</UserControl>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWIZ_Lab_8", "PWIZ_Lab_8\PWIZ_Lab_8.csproj", "{ECB137B3-FDE5-77BB-9C0F-DBC7A6D43EEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWIZ_Lab_8.Desktop", "PWIZ_Lab_8.Desktop\PWIZ_Lab_8.Desktop.csproj", "{423EDF65-33C9-3FCC-5FFA-BE9A522A079D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECB137B3-FDE5-77BB-9C0F-DBC7A6D43EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB137B3-FDE5-77BB-9C0F-DBC7A6D43EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB137B3-FDE5-77BB-9C0F-DBC7A6D43EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB137B3-FDE5-77BB-9C0F-DBC7A6D43EEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423EDF65-33C9-3FCC-5FFA-BE9A522A079D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423EDF65-33C9-3FCC-5FFA-BE9A522A079D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423EDF65-33C9-3FCC-5FFA-BE9A522A079D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423EDF65-33C9-3FCC-5FFA-BE9A522A079D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ACA3CE3-6FEB-4097-92FD-221E9DD33BC9}
+	EndGlobalSection
+EndGlobal
