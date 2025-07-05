@@ -59,7 +59,6 @@ public partial class UserControlBlackJack : UserControl
             }
             else if (points == 21)
             {
-                // Automatycznie zakończ turę gracza
                 OnStand(null, null);
             }
         }
@@ -94,7 +93,7 @@ public partial class UserControlBlackJack : UserControl
 
     private void AddCard(Card card, Panel panel)
     {
-        var uri = new Uri($"avares://PWIZ_Lab_8{card.ImagePath}.png");
+        var uri = new Uri($"avares://PWIZ_Lab_8{card.ImagePath}");
         var bitmap = new Bitmap(AssetLoader.Open(uri));
 
         var image = new Image
@@ -141,7 +140,6 @@ public partial class UserControlBlackJack : UserControl
         string folderPath = Path.Combine(projectRoot, "Results");
         string path = Path.Combine(folderPath, "OczkoGameResults.json");
 
-        // Upewnij się, że katalog istnieje
         if (!Directory.Exists(folderPath))
             Directory.CreateDirectory(folderPath);
 

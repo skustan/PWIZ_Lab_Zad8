@@ -1,0 +1,14 @@
+[
+  {
+    "Winner": "Przegrana",
+    "PlayerCardsLeft": 2,
+    "ComputerCardsLeft": 48,
+    "GameEndTime": "2025-07-05T20:58:47.2039571+02:00"
+  },
+  {
+    "Winner": "Wygrama",
+    "PlayerCardsLeft": 48,
+    "ComputerCardsLeft": 2,
+    "GameEndTime": "2025-07-05T21:11:03.7399629+02:00"
+  }
+]

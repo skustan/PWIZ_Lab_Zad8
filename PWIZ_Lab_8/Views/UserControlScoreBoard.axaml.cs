@@ -5,22 +5,26 @@ using System.Linq;
 using System.Text.Json;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using PWIZ_Lab_8.Models; // używaj modelu OczkoGameResult z osobnego pliku
+using PWIZ_Lab_8.Models;
 
 namespace PWIZ_Lab_8;
 
 public partial class UserControlScoreBoard : UserControl
 {
+
     public UserControlScoreBoard()
     {
         InitializeComponent();
-        LoadOczkoResults(); // dopiero po przypisaniu ResultsListBox
+
+        LoadOczkoResults();
+        LoadWarResults();
     }
 
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
-        ResultsListBox = this.FindControl<ListBox>("ResultsListBox");
+        OczkoResultsListBox = this.FindControl<ListBox>("OczkoResultsListBox");
+        WarResultsListBox = this.FindControl<ListBox>("WarResultsListBox");
     }
 
     private void LoadOczkoResults()
@@ -31,7 +35,7 @@ public partial class UserControlScoreBoard : UserControl
 
         if (!File.Exists(path))
         {
-            ResultsListBox.ItemsSource = new List<OczkoGameResult>();
+            OczkoResultsListBox.ItemsSource = new List<OczkoGameResult>();
             return;
         }
 
@@ -40,11 +44,36 @@ public partial class UserControlScoreBoard : UserControl
             string json = File.ReadAllText(path);
             var results = JsonSerializer.Deserialize<List<OczkoGameResult>>(json) ?? new List<OczkoGameResult>();
             var sorted = results.OrderByDescending(r => r.Time).ToList();
-            ResultsListBox.ItemsSource = sorted;
+            OczkoResultsListBox.ItemsSource = sorted;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Błąd podczas ładowania wyników: {ex.Message}");
+            Console.WriteLine($"Błąd podczas ładowania wyników Oczko: {ex.Message}");
+        }
+    }
+
+    private void LoadWarResults()
+    {
+        string baseDir = AppContext.BaseDirectory;
+        string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\..\.."));
+        string path = Path.Combine(projectRoot, "Results", "WarGameResults.json");
+
+        if (!File.Exists(path))
+        {
+            WarResultsListBox.ItemsSource = new List<WarGameResult>();
+            return;
+        }
+
+        try
+        {
+            string json = File.ReadAllText(path);
+            var results = JsonSerializer.Deserialize<List<WarGameResult>>(json) ?? new List<WarGameResult>();
+            var sorted = results.OrderByDescending(r => r.GameEndTime).ToList();
+            WarResultsListBox.ItemsSource = sorted;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Błąd podczas ładowania wyników Wojny: {ex.Message}");
         }
     }
 }

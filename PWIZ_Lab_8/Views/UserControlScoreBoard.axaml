@@ -10,25 +10,54 @@
 		<DataTemplate x:Key="OczkoTemplate" DataType="models:OczkoGameResult">
 			<Grid Margin="5" ColumnDefinitions="2*,1.2*,1*,1*">
 				<TextBlock Grid.Column="0" Text="{Binding Time, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
-                           TextAlignment="Center" VerticalAlignment="Center"/>
+						   TextAlignment="Center" VerticalAlignment="Center"/>
 				<TextBlock Grid.Column="1" Text="{Binding Result}" TextAlignment="Center" VerticalAlignment="Center"/>
 				<TextBlock Grid.Column="2" Text="{Binding PlayerPoints}" TextAlignment="Center" VerticalAlignment="Center"/>
 				<TextBlock Grid.Column="3" Text="{Binding DealerPoints}" TextAlignment="Center" VerticalAlignment="Center"/>
 			</Grid>
 		</DataTemplate>
+
+		<DataTemplate x:Key="WarTemplate" DataType="models:WarGameResult">
+			<Grid Margin="5" ColumnDefinitions="2*,1.5*,1*,1*">
+				<TextBlock Grid.Column="0" Text="{Binding GameEndTime, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+						   TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Text="{Binding Winner}" TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Text="{Binding PlayerCardsLeft}" TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="3" Text="{Binding ComputerCardsLeft}" TextAlignment="Center" VerticalAlignment="Center"/>
+			</Grid>
+		</DataTemplate>
 	</UserControl.Resources>
 
 	<DockPanel LastChildFill="True" Background="#35654D">
-		<TextBlock HorizontalAlignment="Center" Text="Historia gier: Oczko" FontSize="18" DockPanel.Dock="Top" Margin="10" />
+		<TextBlock HorizontalAlignment="Center" Text="Historia gier" FontSize="18" DockPanel.Dock="Top" Margin="10" />
 
-		<Grid DockPanel.Dock="Top" Margin="5" ColumnDefinitions="2*,1.2*,1*,1*" HorizontalAlignment="Stretch">
-			<TextBlock Grid.Column="0" Text="Data" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
-			<TextBlock Grid.Column="1" Text="Wynik" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
-			<TextBlock Grid.Column="2" Text="Gracz" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
-			<TextBlock Grid.Column="3" Text="Krupier" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
-		</Grid>
+		<TabControl>
+			<TabItem Header="Oczko">
+				<DockPanel>
+					<Grid DockPanel.Dock="Top" Margin="5" ColumnDefinitions="2*,1.2*,1*,1*" HorizontalAlignment="Stretch">
+						<TextBlock Grid.Column="0" Text="Data" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="1" Text="Wynik" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="2" Text="Gracz" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="3" Text="Krupier" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+					</Grid>
+					<ListBox x:Name="OczkoResultsListBox" ItemTemplate="{StaticResource OczkoTemplate}" HorizontalAlignment="Stretch"/>
+				</DockPanel>
+			</TabItem>
 
-		<ListBox x:Name="ResultsListBox" ItemTemplate="{StaticResource OczkoTemplate}" HorizontalAlignment="Stretch"/>
+			<TabItem Header="Wojna">
+				<DockPanel>
+					<Grid DockPanel.Dock="Top" Margin="5" ColumnDefinitions="2*,1.5*,1*,1*" HorizontalAlignment="Stretch">
+						<TextBlock Grid.Column="0" Text="Data" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="1" Text="Zwycięzca" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="2" Text="Karty gracza" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="3" Text="Karty komputera" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+					</Grid>
+					<ListBox x:Name="WarResultsListBox" ItemTemplate="{StaticResource WarTemplate}" HorizontalAlignment="Stretch"/>
+				</DockPanel>
+			</TabItem>
+		</TabControl>
+
 	</DockPanel>
-
 </UserControl>
+
+

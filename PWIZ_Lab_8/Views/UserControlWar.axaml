@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PWIZ_Lab_8.UserControlWar"
+             d:DesignWidth="800" d:DesignHeight="450"
+			 Background="#35654D">
+
+	<StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center">
+
+		<StackPanel Orientation="Horizontal" Spacing="40" HorizontalAlignment="Center">
+			<StackPanel>
+				<TextBlock Text="Gracz" FontWeight="Bold"/>
+
+				<StackPanel x:Name="PlayerPanel" Orientation="Horizontal" />
+				
+				<TextBlock x:Name="PlayerCountText"/>
+			</StackPanel>
+
+			<StackPanel>
+				<TextBlock Text="Komputer" FontWeight="Bold"/>
+
+				<StackPanel x:Name="ComputerPanel" Orientation="Horizontal" />
+
+				<TextBlock x:Name="ComputerCountText"/>
+			</StackPanel>
+		</StackPanel>
+
+
+
+		<TextBlock x:Name="RoundResultText" FontWeight="Bold" FontSize="16" TextAlignment="Center" Margin="0,10"/>
+
+		<StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+			<Button x:Name="PlayRoundButton"  Content="Zagraj rundę" Click="OnPlayRound"/>
+			<Button Content="Wróć do menu" Click="OnBackToMenu"/>
+		</StackPanel>
+
+	</StackPanel>
+	
+	
+</UserControl>

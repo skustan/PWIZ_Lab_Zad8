@@ -334,5 +334,11 @@
     "PlayerPoints": 25,
     "DealerPoints": 0,
     "Time": "2025-07-05T19:21:01.3330398+02:00"
+  },
+  {
+    "Result": "Przegrana",
+    "PlayerPoints": 26,
+    "DealerPoints": 0,
+    "Time": "2025-07-05T19:46:24.3603403+02:00"
   }
 ]

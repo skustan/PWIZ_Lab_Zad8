@@ -18,7 +18,7 @@ namespace PWIZ_Lab_8.Models
             this.Value = value;
         }
 
-        public string ImagePath => $"/Assets/Cards/{Suit} {Value}";
+        public string ImagePath => $"/Assets/Cards/{Suit} {Value}.png";
 
     }
 }

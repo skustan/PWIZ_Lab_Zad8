@@ -19,11 +19,17 @@ public partial class MainMenu : UserControl
         ButtonScoreBoard.Click += ButtonScoreBoard_OnClick;
         ButtonExit.Click += ButtonExit_OnClick;
         ButtonPlayBlackJack.Click += ButtonPlayBlackJack_OnClick;
+        ButtonPlayWar.Click += ButtonPlayWar_OnClick;
     }
 
     private void ButtonPlayBlackJack_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         _mainWindow.NavigateTo(new UserControlBlackJack(_mainWindow));
+    }
+
+    private void ButtonPlayWar_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        _mainWindow.NavigateTo(new UserControlWar(_mainWindow));
     }
 
     private void ButtonScoreBoard_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
