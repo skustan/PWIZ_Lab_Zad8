@@ -11,5 +11,7 @@
 		Height="450"
 		Width="800"
 		CanResize="False">
-        <views:MainMenu />
+	
+        <ContentControl x:Name="MainContent"/>
+	
 </Window>

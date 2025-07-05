@@ -3,11 +3,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="PWIZ_Lab_8.UserControlScoreBoard">
+             x:Class="PWIZ_Lab_8.UserControlScoreBoard"
+             xmlns:models="clr-namespace:PWIZ_Lab_8.Models">
 
-	<StackPanel Background="#35654D">
-		
-	</StackPanel>
-  
-  
+	<UserControl.Resources>
+		<DataTemplate x:Key="OczkoTemplate" DataType="models:OczkoGameResult">
+			<Grid Margin="5" ColumnDefinitions="2*,1.2*,1*,1*">
+				<TextBlock Grid.Column="0" Text="{Binding Time, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+                           TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Text="{Binding Result}" TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Text="{Binding PlayerPoints}" TextAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="3" Text="{Binding DealerPoints}" TextAlignment="Center" VerticalAlignment="Center"/>
+			</Grid>
+		</DataTemplate>
+	</UserControl.Resources>
+
+	<DockPanel LastChildFill="True" Background="#35654D">
+		<TextBlock HorizontalAlignment="Center" Text="Historia gier: Oczko" FontSize="18" DockPanel.Dock="Top" Margin="10" />
+
+		<Grid DockPanel.Dock="Top" Margin="5" ColumnDefinitions="2*,1.2*,1*,1*" HorizontalAlignment="Stretch">
+			<TextBlock Grid.Column="0" Text="Data" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+			<TextBlock Grid.Column="1" Text="Wynik" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+			<TextBlock Grid.Column="2" Text="Gracz" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+			<TextBlock Grid.Column="3" Text="Krupier" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+		</Grid>
+
+		<ListBox x:Name="ResultsListBox" ItemTemplate="{StaticResource OczkoTemplate}" HorizontalAlignment="Stretch"/>
+	</DockPanel>
+
 </UserControl>

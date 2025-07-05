@@ -7,8 +7,6 @@
              x:Class="PWIZ_Lab_8.Views.MainMenu"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
 
@@ -30,32 +28,35 @@
 			HorizontalAlignment="Center"
 			>
 			<Button
-			Grid.Column="0"
+				Name="ButtonPlayBlackJack"
+				Grid.Column="0"
 			
-			Margin="2"
-			Width="150"
-			HorizontalContentAlignment="Center"
-			HorizontalAlignment="Center"
-				>Gra 1</Button>
+				Margin="2"
+				Width="150"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Center"
+				>Oczko</Button>
+			<!--
+			<Button	
+				Name="ButtonPlayWar"
+				Grid.Column="1"
+			
+				Margin="2"
+				Width="150"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Center"
+				>Wojna</Button>
 
 			<Button
-			Grid.Column="1"
+				Name="ButtonPlayMemory"
+				Grid.Column="2"
 			
-			Margin="2"
-			Width="150"
-			HorizontalContentAlignment="Center"
-			HorizontalAlignment="Center"
-				>Gra 2</Button>
-
-			<Button
-			Grid.Column="2"
-			
-			Margin="2"
-			Width="150"
-			HorizontalContentAlignment="Center"
-			HorizontalAlignment="Center"
-				>Gra 3</Button>
-			
+				Margin="2"
+				Width="150"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Center"
+				>Memory</Button>
+			-->
 		</Grid>
 		
 		<Button 
