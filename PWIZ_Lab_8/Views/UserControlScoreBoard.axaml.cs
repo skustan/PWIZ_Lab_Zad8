@@ -18,6 +18,7 @@ public partial class UserControlScoreBoard : UserControl
 
         LoadOczkoResults();
         LoadWarResults();
+        LoadMemoryResults();
     }
 
     private void InitializeComponent()
@@ -25,6 +26,7 @@ public partial class UserControlScoreBoard : UserControl
         AvaloniaXamlLoader.Load(this);
         OczkoResultsListBox = this.FindControl<ListBox>("OczkoResultsListBox");
         WarResultsListBox = this.FindControl<ListBox>("WarResultsListBox");
+        MemoryResultsListBox = this.FindControl<ListBox>("MemoryResultsListBox");
     }
 
     private void LoadOczkoResults()
@@ -76,4 +78,30 @@ public partial class UserControlScoreBoard : UserControl
             Console.WriteLine($"Błąd podczas ładowania wyników Wojny: {ex.Message}");
         }
     }
+
+    private void LoadMemoryResults()
+    {
+        string baseDir = AppContext.BaseDirectory;
+        string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\..\.."));
+        string path = Path.Combine(projectRoot, "Results", "MemoryGameResults.json");
+
+        if (!File.Exists(path))
+        {
+            MemoryResultsListBox.ItemsSource = new List<MemoryGameResult>();
+            return;
+        }
+
+        try
+        {
+            string json = File.ReadAllText(path);
+            var results = JsonSerializer.Deserialize<List<MemoryGameResult>>(json) ?? new List<MemoryGameResult>();
+            var sorted = results.OrderByDescending(r => r.Time).ToList();
+            MemoryResultsListBox.ItemsSource = sorted;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Błąd podczas ładowania wyników Wojny: {ex.Message}");
+        }
+    }
+
 }

@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PWIZ_Lab_8.Views.UserControlMemory"
+             Width="800" Height="450"
+			 Background="#35654D">
+	<DockPanel Margin="10">
+		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20" Margin="0,0,0,10">
+			<TextBlock Text="Ruchy:" FontWeight="Bold" FontSize="16"/>
+			<TextBlock x:Name="MovesText" FontSize="16" Text="0"/>
+			<TextBlock Text="Czas:" FontWeight="Bold" FontSize="16" Margin="20,0,0,0"/>
+			<TextBlock x:Name="TimeText" FontSize="16" Text="00:00"/>
+			<TextBlock Name="WinText" FontSize="16" FontWeight="Bold" Margin="10"/>
+		</StackPanel>
+
+		<UniformGrid Rows="4" Columns="4" x:Name="BoardGrid" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+		<StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+			<Button x:Name="RestartButton" HorizontalContentAlignment="Center" Content="Restart" Width="100" HorizontalAlignment="Center" Margin="10"/>
+			<Button x:Name="BackToMenuButton" HorizontalContentAlignment="Center" Content="Wróć do Menu" Width="150" HorizontalAlignment="Center" Margin="10"/>
+		</StackPanel>
+
+	</DockPanel>
+	
+</UserControl>

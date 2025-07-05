@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia.Controls;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace PWIZ_Lab_8.Models
 {
@@ -19,6 +22,8 @@ namespace PWIZ_Lab_8.Models
         }
 
         public string ImagePath => $"/Assets/Cards/{Suit} {Value}.png";
+
+        
 
     }
 }

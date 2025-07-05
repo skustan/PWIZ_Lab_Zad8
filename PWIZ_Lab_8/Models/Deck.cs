@@ -36,5 +36,8 @@ namespace PWIZ_Lab_8.Models
 
         public int Count => _cards.Count;
 
+        public IReadOnlyList<Card> Cards => _cards.AsReadOnly();
+
+
     }
 }

@@ -20,6 +20,7 @@ public partial class MainMenu : UserControl
         ButtonExit.Click += ButtonExit_OnClick;
         ButtonPlayBlackJack.Click += ButtonPlayBlackJack_OnClick;
         ButtonPlayWar.Click += ButtonPlayWar_OnClick;
+        ButtonPlayMemory.Click += ButtonPlayMemory_OnClick;
     }
 
     private void ButtonPlayBlackJack_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -30,6 +31,11 @@ public partial class MainMenu : UserControl
     private void ButtonPlayWar_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         _mainWindow.NavigateTo(new UserControlWar(_mainWindow));
+    }
+
+    private void ButtonPlayMemory_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        _mainWindow.NavigateTo(new UserControlMemory(_mainWindow));
     }
 
     private void ButtonScoreBoard_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
